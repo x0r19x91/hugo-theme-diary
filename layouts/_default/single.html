@@ -25,37 +25,39 @@
                         {{ .Params.description }}
                     </div>
                     {{ end }}
-                    <div class="post-meta">
+                    <div class="post-meta" style="font-family: Ruda;">
                         {{ if .Params.date}}
                         <time itemprop="datePublished">
                             {{ i18n "format_date_tosec" .PublishDate }}
                         </time>
                         {{ end }}
-
-                        {{ if .Params.categories }}
-                            <i class="material-icons" style="">folder</i>
-                                <a href="{{ "/categories/" | relLangURL }}{{ .Params.categories | urlize }}">{{ .Params.categories }}</a>
-                                &nbsp;
-                        {{ end }}
-
-                        {{ if gt .Params.tags 0 }}
-                            <i class="material-icons" style="">label</i>
-                            {{ range .Params.tags }}
-                                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-                                &nbsp;
-                            {{ end }}
-                        {{ end }}
+                        
                         {{ if .Site.Params.enableReadingTime }}
-                            <i class="material-icons" style="">schedule</i>
-                            {{ $readTime := mul (div (countwords .Content) 220.0) 60 }}
-
-                            {{ $minutes := math.Floor (div $readTime 60) }}
-                            {{ $seconds := mod $readTime 60 }}
-
-                            {{ if gt $minutes 0}}
-                            {{ $minutes }} {{ cond (eq $minutes 1) "minute" "min" }}
-                            {{ end }}
-                            {{ $seconds }} {{ cond (eq $seconds 1) "second" "s" }}.
+                        <i class="material-icons" style="">schedule</i>
+                        {{ $readTime := mul (div (countwords .Content) 220.0) 60 }}
+                        
+                        {{ $minutes := math.Floor (div $readTime 60) }}
+                        {{ $seconds := mod $readTime 60 }}
+                        
+                        {{ if gt $minutes 0}}
+                        {{ $minutes }} {{ cond (eq $minutes 1) "minute" "min" }}
+                        {{ end }}
+                        {{ $seconds }} {{ cond (eq $seconds 1) "second" "s" }}.
+                        {{ end }}
+                    </div>
+                    <div class="post-meta" style="font-family: Ruda;">
+                        {{ if .Params.categories }}
+                        <i class="material-icons" style="">folder</i>
+                        <a href="{{ "/categories/" | relLangURL }}{{ .Params.categories | urlize }}">{{ .Params.categories }}</a>
+                        &nbsp;
+                        {{ end }}
+                        
+                        {{ if gt .Params.tags 0 }}
+                        <i class="material-icons" style="">label</i>
+                        {{ range .Params.tags }}
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                        &nbsp;
+                        {{ end }}
                         {{ end }}
                     </div>
                 </div>
@@ -70,7 +72,7 @@
                     {{.Content}}
                     {{ if not .Lastmod.IsZero }}
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">{{ i18n "last_mod_on" .Page.Lastmod }}</p>
+            <p style="color:#777;">{{ i18n "last_mod_on" .Page.Lastmod }}</p>
                     {{ end }}
                 </div>
             </div>
@@ -80,21 +82,21 @@
 
                 {{if .Next}}
                 <a class="newer-posts" href="{{.Next.Permalink}}">
-			{{ i18n "next_link" }}<br>{{.Next.Title}}
+            {{ i18n "next_link" }}<br>{{.Next.Title}}
                 </a>
                 {{else}}
                 <a class="newer-posts">
-			{{ i18n "next_link" }}<br>{{ i18n "no_newer_posts"}}
+            {{ i18n "next_link" }}<br>{{ i18n "no_newer_posts"}}
                 </a>
                 {{end}}
                 
                 {{if .Prev}}
                 <a class="older-posts" href="{{.Prev.Permalink}}">
-			{{ i18n "prev_link" }}<br>{{.Prev.Title}}
+            {{ i18n "prev_link" }}<br>{{.Prev.Title}}
                 </a>
                 {{else}}
                 <a class="older-posts">
-			{{ i18n "prev_link" }}<br>{{ i18n "no_older_posts" }}
+            {{ i18n "prev_link" }}<br>{{ i18n "no_older_posts" }}
                 </a>
                 {{end}}
             </nav>
