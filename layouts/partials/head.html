@@ -58,6 +58,9 @@
 <script src="{{.Site.BaseURL}}/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+  loadCSS("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap");
+  loadCSS("https://fonts.googleapis.com/css2?family=Ruda:wght@400&display=swap");
+  loadCSS("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
 </script>
 
 {{ if .Params.enableMathJax }}
@@ -117,4 +120,10 @@ $(
 <script src="https://cdn.jsdelivr.net/npm/vue-disqus@3/dist/vue-disqus.js"></script>
 {{ end }}
 
+<link rel="stylesheet" href="/hljs/railscasts.css">
+<script src="/hljs/highlight.pack.js"></script>
+
+<script defer="true">
+  hljs.initHighlightingOnLoad();
+</script>
 </head>
