@@ -3,11 +3,13 @@ $color-accent: #1976d2;
 $back-container-background: #fcfcfc;
 $front-container-background: #ffffff;
 
-$default-font-list: "Lora", "Noto Serif SC";
+// $default-font-list: "Lora", "Noto Serif SC";
+$default-font-list: "Open Sans";
 $mono-font-list: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro",
   monospace;
-$sans-preferred-font-list: "Montserrat", "Roboto", "Source Sans Pro",
-  "Helvetica", $default-font-list;
+$sans-preferred-font-list: $default-font-list;
+// $sans-preferred-font-list: "Montserrat", "Roboto", "Source Sans Pro",
+  // "Helvetica", $default-font-list;
 
 $side-container-width: 25%; //280px;
 $extra-container-width: 25%;
@@ -68,7 +70,7 @@ body {
 }
 
 * {
-  color: $deep-dark-accent;
+  // color: $deep-dark-accent;
   //line-height: 1.7em;
   word-wrap: break-word;
   box-sizing: border-box;
@@ -128,8 +130,8 @@ button {
 }
 
 code {
-  color: $dark-accent;
-  background: rgba($color-accent, 0.07) !important;
+  // color: $dark-accent;
+  // background: rgba($color-accent, 0.07) !important;
   padding: 2px 5px;
   border-radius: 3px;
   font-family: $mono-font-list;
@@ -138,7 +140,7 @@ code {
 pre {
   //background: rgba(46,46,46, 1) !important;
   //color: rgba(255,255,255, 1);
-  background: rgba($color-accent, 0.07);
+  // background: rgba($color-accent, 0.07);
   padding: 12px 15px;
   border-radius: 5px;
   font-family: $mono-font-list;
@@ -461,6 +463,7 @@ a {
   }
   .nav-link-list {
     flex-grow: 1;
+    font-family: Ruda;
     .nav-link-item {
       font-size: $nav-link-size;
       margin-bottom: 10px;
