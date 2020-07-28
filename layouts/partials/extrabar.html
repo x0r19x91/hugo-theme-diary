@@ -15,14 +15,14 @@
             </i>
         </a>
         {{ if not .Site.Params.disableDarkMode }}
-        <a class="pagination-action" v-on:click="toggleDarkMode">
+<!--         <a class="pagination-action" v-on:click="toggleDarkMode">
             <i class="material-icons pagination-action-icon" v-if="isDarkMode">
                 brightness_4
             </i>
             <i class="material-icons pagination-action-icon" v-else="isDarkMode">
                 brightness_7
             </i>
-        </a>
+        </a> -->
         {{ end }}
         {{ if .Paginator }}
         {{ if gt .Paginator.TotalPages 1 }}
